@@ -9,6 +9,7 @@
   border: 1px solid #FFFFFF;
   padding: 1rem;
   border-radius: 1rem;
+  cursor: pointer;
   transition: 0.115s;
 }
 
@@ -19,6 +20,8 @@
 
 .card > h2 {
   font-size: 2rem;
+  border-left: 0.5rem solid #AAD4EC;
+  padding-left: 1rem;
 }
 
 .card > img {
