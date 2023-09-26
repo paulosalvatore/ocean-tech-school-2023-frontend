@@ -7,13 +7,17 @@ function App() {
     imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
   }
 
-  // TODO: Criar um segundo item e exibir um card para ele
   const item2 = {
     nome: 'Morty Smith',
     imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
   }
 
-  const itens = [item1, item2]
+  const item3 = {
+    nome: 'Summer Smith',
+    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
+  }
+
+  const itens = [item1, item2, item3]
 
   return (
     <>
