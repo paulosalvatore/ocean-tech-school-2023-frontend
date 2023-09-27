@@ -1,9 +1,11 @@
 import './Tag.css'
 
-export default function Tag() {
+export default function Tag(props) {
     /*
     Conteúdo do componente
     */
+
+    const text = props.text;
 
     /*
     Return -> Encerra a função
@@ -11,5 +13,5 @@ export default function Tag() {
     exibido na tela
     */
 
-    return <div>Tag funcionando!</div>
+    return <div className="tag">{text}</div>
 }
