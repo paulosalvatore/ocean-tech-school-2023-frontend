@@ -23,8 +23,8 @@ function App() {
 
   return (
     <>
-      {itens.map(function (item) {
-        return <Card item={item}/>
+      {itens.map(function (item, index) {
+        return <Card item={item} key={`card_${index}`} />
       })}
     </>
   )

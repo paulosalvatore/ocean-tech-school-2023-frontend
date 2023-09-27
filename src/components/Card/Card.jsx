@@ -20,8 +20,8 @@ export default function Card(props) {
     <h2>{item.nome}</h2>
 
     <div className="tags">
-      {tags.map(function (tag) {
-        return <Tag text={tag}/>
+      {tags.map(function (tag, index) {
+        return <Tag text={tag} key={`card_tag_${index}`} />
       })}
     </div>
 
