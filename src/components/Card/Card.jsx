@@ -16,8 +16,6 @@ export default function Card(props) {
   // Jeito otimizado
   const tags = item.tags || [];
 
-  console.log(tags);
-
   return <div className="card">
     <h2>{item.nome}</h2>
 
