@@ -1,25 +1,35 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './components/Card/Card'
 
 function App() {
-  const item1 = {
-    nome: 'Rick Sanchez',
-    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-    tags: ['Status: Vivo', 'Espécie: Humana']
+  const [itens, setItens] = useState([])
+  // useState do React traz duas coisas:
+  // 1. O estado contendo o valor
+  // 2. A função que atualiza o valor do estado
+  //      Quando executada, a função também re-renderiza o componente automaticamente
+
+  async function carregarDadosApi() {
+    console.log('carregarDadosApi')
+
+    const response = await fetch("https://rickandmortyapi.com/api/character/")
+
+    const json = await response.json()
+
+    const results = json.results
+
+    console.log(results)
+    setItens(results)
   }
 
-  const item2 = {
-    nome: 'Morty Smith',
-    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-    tags: ['Origem: Terra C-137']
-  }
+  // useEffect recebe duas informações:
+  // 1. Função contendo o efeito que será protegido pelo useEffect
+  // 2. Dependências que controlam a executam do useEffect. Array vazio para executar apenas 1 vez
+  useEffect(function () {
+    carregarDadosApi()
+  }, [])
 
-  const item3 = {
-    nome: 'Summer Smith',
-    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
-  }
-
-  const itens = [item1, item2, item3]
+  console.log("Renderizando o componente")
 
   return (
     <>
